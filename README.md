@@ -13,3 +13,5 @@ Store video and the like here.
 3. [Anaconda](https://www.anaconda.com/distribution/) 
 A python distribution for data science.
 
+4. [Git Documentation](https://git-scm.com/doc)
+
