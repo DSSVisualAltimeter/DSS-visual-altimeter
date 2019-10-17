@@ -1,0 +1,38 @@
+AirSim Python Notes:
+
+(1) Here are instructions for installing airsim in python:
+
+	(a) uninstall all instances of python, anaconda, pip, ...
+	(b) install the 64 bit version ov Anaconda
+	(c) open the Anaconda Powershell Pompt and type: conda install pip
+	(d) from the Anaconda Powershell Pompt type: python -m pip nstall airsim
+
+(2) next, download an environment. AirSim environments can be downloaded here:
+
+https://github.com/Microsoft/AirSim/releases
+
+Then click on v1.2.2 - Windows, scroll down, and download an environment.
+A good one to start with is one of the smaller ones, like Coastline.
+
+(3) in order to control the drone from python, you must first run an environment
+*.bat file, for example, go to
+
+	C:\Users\chilton\Dropbox\a_Research_Active\AFIT\environments\Neighborhood
+
+and run the run.bat file, then you should be able to run the testing_drone.py file
+(or computer_vision_test.py) to connect to the API, control the vehicle,
+collect data, etc.
+
+(4) If you lose the cursor, that is because it has been captured by the environment
+file. To regain control of the cursor, hit <window> key.
+
+(5) The msgpack-rpc-python and msgpack-python package (and related packages) need
+to be installed as admin (?), which can be done by typing <windows> - x, and
+selecting Windows PowerShell Admin.
+
+5) need to make a connection with the documentation:
+	https://microsoft.github.io/AirSim/docs/apis/
+
+6) need to figure out how to collect/save video:
+	https://microsoft.github.io/AirSim/docs/image_apis/
+
