@@ -132,6 +132,7 @@ history = model.fit_generator(
 print(model.summary())
 
 
+remove_validation_data()
 plot_model(model)
 
 
@@ -157,4 +158,4 @@ plt.savefig('fig2.png')
 
 model.save_weights('first_try.h5')
 
-remove_validation_data()
+
