@@ -2,13 +2,16 @@ from keras.preprocessing.image import ImageDataGenerator
 from keras.models import Sequential
 from keras.layers import Conv2D, MaxPooling2D
 from keras.layers import Activation, Dropout, Flatten, Dense
+from keras.utils import plot_model
 from keras import backend as K
+import matplotlib.pyplot as plt
 import os
 import random
 
-### Make sure there are trailing slashes!! ###
-data_dir = "data/"
-validation_dir = "validation/"
+### You may need to adjust these paths for ###
+### your own operating system.             ###
+data_dir = "data"
+validation_dir = "validation"
 
 def create_validation_data(howmany):
   """
@@ -16,16 +19,23 @@ def create_validation_data(howmany):
   directory. It only copies if a random number generated between 1 and `howmany`
   is equal to 1, so if you pass in 10, roughly 1/10 of the  images will be used for 
   validation. 
-  THIS WILL ALL FAIL if `data_dir` and `validation_dir` do not end
-  in slashes ("/").
+  Returns a tuple of the number of training images ad the number of validation images.
   """
   datasets = os.listdir(data_dir)
+  nval = 0
+  ndat = 0
   for s in datasets:
-    os.makedirs(validation_dir + s)
-    images = os.listdir(data_dir + s)
+    os.makedirs(os.path.join(validation_dir, s))
+    images = os.listdir(os.path.join(data_dir, s))
     for i in images:
       if random.randint(1, howmany) == 1:
-        os.rename(data_dir + s + "/" + i, validation_dir + s + "/" + i)
+        os.rename(os.path.join(data_dir, s, i), os.path.join(validation_dir, s, i))
+        nval += 1
+      else:
+        ndat += 1
+  return ndat, nval
+
+
 
 def remove_validation_data():
   """
@@ -34,12 +44,15 @@ def remove_validation_data():
   """
   validationsets = os.listdir(validation_dir)
   for v in validationsets:
-    images = os.listdir(validation_dir + v)
+    images = os.listdir(os.path.join(validation_dir, v))
     for i in images: 
-      os.rename(validation_dir + v + "/" + i, data_dir + v + "/" +i)
-    os.rmdir(validation_dir + v)
+      os.rename(os.path.join(validation_dir, v, i), os.path.join(data_dir, v,i))
+    os.rmdir(os.path.join(validation_dir, v))
 
-create_validation_data(10)
+##############################################################################
+
+remove_validation_data()
+ndat, nval = create_validation_data(10)
 
 # dimensions of our images. if your raw data is not of this size,
 # you will need to use ffmpeg (or some other tool) to figure out
@@ -50,8 +63,8 @@ img_width, img_height = 256, 256
 # where your script (altimeter_nn.py) is
 train_data_dir = data_dir
 validation_data_dir = validation_dir
-nb_train_samples = 2352
-nb_validation_samples = 1158
+nb_train_samples = ndat
+nb_validation_samples = nval
 epochs = 8
 # Check to see if it shuffles batch_size randomly or sequentially
 batch_size = 36
@@ -63,15 +76,15 @@ else:
 
 # Google "keras model sequential add" to understand what this code is doing
 model = Sequential()
-model.add(Conv2D(32, (3, 3), input_shape=input_shape))
+model.add(Conv2D(32, (6, 6), input_shape=input_shape))
+model.add(Activation('relu'))
+model.add(MaxPooling2D(pool_size=(9, 9)))
+
+model.add(Conv2D(64, (6, 6)))
 model.add(Activation('relu'))
 model.add(MaxPooling2D(pool_size=(2, 2)))
 
-model.add(Conv2D(32, (3, 3)))
-model.add(Activation('relu'))
-model.add(MaxPooling2D(pool_size=(2, 2)))
-
-model.add(Conv2D(64, (3, 3)))
+model.add(Conv2D(94, (3, 3)))
 model.add(Activation('relu'))
 model.add(MaxPooling2D(pool_size=(2, 2)))
 
@@ -118,14 +131,13 @@ history = model.fit_generator(
 
 print(model.summary())
 
-from keras.utils import plot_model
+
 plot_model(model)
 
-import matplotlib.pyplot as plt
 
 # Plot training & validation accuracy values
-plt.plot(history.history['accuracy'])
-plt.plot(history.history['val_accuracy'])
+plt.plot(history.history['acc'])
+plt.plot(history.history['val_acc'])
 plt.title('Model accuracy')
 plt.ylabel('Accuracy')
 plt.xlabel('Epoch')
