@@ -2,53 +2,32 @@
 
 README is still under development
 
-## Project Vision
+# Description
 
-Currently, Drones measure the altitude using GPS, barometers, or internal navigation systems. The goal of this project investigates the ability to use a Drone's camera footage as an altitude measurement. Our findings will be documented below
+Currently, Drones measure the altitude using GPS, barometers, or internal navigation systems. The goal of this project investigates the ability to use a Drone's camera footage as an altitude measurement. Research 
 
-## Project Requirements
+# Table of Contents
+1. [Installation](#installation)
+2. [Usage](#usage)
+3. [Contributing](#contributing)
+4. [Credits](#credits)
 
-POC Model:
-- Requirements: Windows or Linux OS' are able to collect images in Airsim
-- Python 3.6+
-- Define image amount: 10000
-- Define splitsize: 80/20
-- Define each images size: 224x224
-- Define grayscale or color: grayscale
-- Define number of classes: 3
-Experiment and Scale model
+## Installation: 
+Installation is the next section in an effective README. Tell other users how to install your project locally. Optionally, include a gif to make the process even more clear for other people.
 
-## Project Set-Up
+## Usage:
+The next section is usage, in which you instruct other people on how to use your project after they’ve installed it. This would also be a good place to include screenshots of your project in action.
 
-The project will have 
+## Contributing:
+Larger projects often have sections on contributing to their project, in which contribution instructions are outlined. Sometimes, this is a separate file. If you have specific contribution preferences, explain them so that other developers know how to best contribute to your work. To learn more about how to help others contribute, check out the guide for setting guidelines for repository contributors.
 
+## Credits:
+Include a section for credits in order to highlight and link to the authors of your project.
 
-### 1. Documentation
+## License: 
+Finally, include a section for the license of your project. For more information on choosing a license, check out GitHub’s licensing guide!
 
-- Record and explore ability and limitations of this project
-- Maintain and document everything for Github repo
-- View other repos with excellent READMEmd files
-- Ensure environments are documented
-- document Project Requirements, Computer Environment Requirements, and How to use Repo etc.
-- Ensure there is a structure for all final code
-- Review code for Data Collection and Model Building
-
-### 2. Data Collection
-
-- Utilize the AirSim environment to create and label image data for training
-- Optimize data collection process
-- Document code and Time it takes to run
-
-### 3. Build Model 
-
-- Set up small scale(few images) POC for a Resnet50 in keras
-- Keras or Pytorch
-- 1000 images (224x224)
-- Define/Visualize Measurement Process
-- Optimize any preprocessing or model steps
-- Document Code
-
-### Helpful Links
+## Helpful Links
 1. [bulk data storage](https://drive.google.com/drive/folders/1Wm8eyhZ8ujNSy5ReifbYFk4cvICGkRuH?usp=sharing)
 Data for the project will be stored here
  
