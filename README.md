@@ -4,7 +4,7 @@ This should introduce you to the basics of the project. After reading this go to
 
 # Description
 
-Currently, Drones measure the altitude using GPS, barometers, or internal navigation systems. The goal of this repository is to document and investigate the ability to use a Drone's camera footage as an altitude measurement.  
+Currently, drones measure the altitude using GPS, barometers, or internal navigation systems. The goal of this repository is to document and investigate the ability to use a drone's camera footage as an altitude measurement.  
 
 
 ## Usage
