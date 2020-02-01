@@ -1,31 +1,40 @@
 # Visual Altimeter
 
-README is still under development
+This should introduce you to the basics of the project. After reading this go to Wiki pages for more documentation.  
 
 # Description
 
-Currently, Drones measure the altitude using GPS, barometers, or internal navigation systems. The goal of this project investigates the ability to use a Drone's camera footage as an altitude measurement. Research 
+Currently, Drones measure the altitude using GPS, barometers, or internal navigation systems. The goal of this repository is to document and investigate the ability to use a Drone's camera footage as an altitude measurement.  
 
-# Table of Contents
-1. [Installation](#installation)
-2. [Usage](#usage)
-3. [Contributing](#contributing)
-4. [Credits](#credits)
 
-## Installation: 
-Installation is the next section in an effective README. Tell other users how to install your project locally. Optionally, include a gif to make the process even more clear for other people.
+## Usage
 
-## Usage:
-The next section is usage, in which you instruct other people on how to use your project after they’ve installed it. This would also be a good place to include screenshots of your project in action.
+This repository is intended to collaborate and communicate work.  
+There are two main parts to this project that contributors will work on.  
+1. Data Collection - involves using python to generate data from Airsim (Airsim installation required)  
+2. Model Development - involves using python for creating the model. Eventually, this will require access to a GPU for traning
 
-## Contributing:
-Larger projects often have sections on contributing to their project, in which contribution instructions are outlined. Sometimes, this is a separate file. If you have specific contribution preferences, explain them so that other developers know how to best contribute to your work. To learn more about how to help others contribute, check out the guide for setting guidelines for repository contributors.
+## Installation
 
-## Credits:
-Include a section for credits in order to highlight and link to the authors of your project.
+### Data Collection
 
-## License: 
-Finally, include a section for the license of your project. For more information on choosing a license, check out GitHub’s licensing guide!
+1. Make sure you have Python Downloaded and an environment setup either through pipenv, venv, conda
+2. [Get started Downloading Airsim](https://github.com/DSSVisualAltimeter/DSS-visual-altimeter/wiki/Installation-Airsim-on-Windows)
+3. Consult Project Manager to know where data is stored
+
+### Model Development
+
+1. Make sure you have Python Downloaded and an environment setup either through pipenv, venv, conda  
+2. Find out where the data is  
+3. Ensure Pytorch or Tensorflow/Keras is downloaded  
+
+## File Structure
+
+Here are the basics of how the repository is set up
+
+- `personal-folders`: contributors may use this to hold all python scripts that they are developing but do not feel are ready to be used by anyone.  
+- `scripts`: python files that are used to complete the project
+
 
 ## Helpful Links
 1. [bulk data storage](https://drive.google.com/drive/folders/1Wm8eyhZ8ujNSy5ReifbYFk4cvICGkRuH?usp=sharing)
