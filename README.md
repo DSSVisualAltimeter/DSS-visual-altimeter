@@ -38,6 +38,7 @@ Here are the basics of how the repository is set up
 - `scripts`: python files that are used to complete the project
 - `images`: contains grayscale images generated from Airsim by Lawrence Chilton
 - `data`: contains colored images generated from Airsim by Christian Clifford
+- `archive_project_Fall_2019`: contains all files uploaded from September - December 2019
 
 
 ## Helpful Links
