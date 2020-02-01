@@ -1,6 +1,6 @@
 # Visual Altimeter
 
-This should introduce you to the basics of the project. After reading this go to Wiki pages for more documentation.  
+This should introduce you to the basics of the project. After reading this go to [Wiki pages](https://github.com/DSSVisualAltimeter/DSS-visual-altimeter/wiki) for more documentation.  
 
 # Description
 
