@@ -16,6 +16,8 @@ There are two main parts to this project that contributors will work on.
 
 ## Installation
 
+Different parts of the project may have different requirements. Find which one you want to contribute to and follow the guidelines  
+
 ### Data Collection
 
 1. Make sure you have Python Downloaded and an environment setup either through pipenv, venv, conda
