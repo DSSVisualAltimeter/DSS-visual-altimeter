@@ -37,7 +37,7 @@ Here are the basics of how the repository is set up
 - `personal-folders`: contributors may use this to hold all python scripts that they are developing but do not feel are ready to be used by anyone.  
 - `scripts`: python files that are used to complete the project
 - `images`: contains grayscale images generated from Airsim by Lawrence Chilton
-- `data`: contains colored images generated from Airsim by Christian Clifford
+- `data`: currently holds nothing
 - `archive_project_Fall_2019`: contains all files uploaded from September - December 2019
 
 
